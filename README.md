@@ -78,6 +78,20 @@ manim-render example_scenes.py OpeningManimExample
     manimgl example_scenes.py OpeningManimExample
     ```
 
+#### Tips for using LaTeX
+
+Before using functions that need LaTeX, please change the  
+temporary directory for intermediate files (which will lead to "LaTeX compilation failed")
+you can change the `tex_file_writing.py` in `manimlib/utils`:  
+  ```tex_file_writing.py in full_tex_to_svg
+  # Write intermediate files to a temporary directory
+  with tempfile.TemporaryDirectory() as temp_dir:
+  
+  ```
+add a `dir="your/path"` into the brackets.
+(If you're using Linux or Mac OSX, please don't use path containing "~".)
+
+
 ## Anaconda Install
 
 1. Install LaTeX as above.
